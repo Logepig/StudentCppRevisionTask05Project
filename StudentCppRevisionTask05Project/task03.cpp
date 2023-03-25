@@ -1,4 +1,4 @@
-﻿#include "tasks.h"
+#include "tasks.h"
 
 /*	Task 03. Minsk Ring Road [МКАД]
 *
@@ -36,5 +36,17 @@
 */
 
 int task03(int v, int t) {
-	return 0;
+	if (t < 0) {
+		return -1;
+	}
+	if (v == 0 || t == 0) {
+		return 0;
+	}
+	if (v > 0) {
+		return (v * t) % 56;
+	}
+	else if (v * t < -56) {
+		return  56 - ((-v * t) % 56);
+	}
+	return 56 + (v * t);
 }
