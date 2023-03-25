@@ -1,4 +1,4 @@
-﻿#include "tasks.h"
+#include "tasks.h"
 
 /*	Task X. Caterpillar [гусиница]
 *
@@ -20,5 +20,14 @@
 */
 
 int taskX(int h, int a, int b) {
-	return 0;
+	if (h <= 0 || a <= 0 || b <= 0 || h <= b || a <= b) {
+		return 0;
+	}
+	for (int i = 1; i < 1000; i++) {
+		h = h - a;
+		if (h <= 0) {
+			return i;
+		}
+		h = h + b;
+	}
 }
