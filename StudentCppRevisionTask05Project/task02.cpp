@@ -1,4 +1,4 @@
-﻿#include "tasks.h"
+#include "tasks.h"
 
 /*	Task 02. Palindrome Number (симметричное число или число-палиндром)
 *
@@ -31,5 +31,12 @@
 */
 
 bool task02(int number) {
+    if (number > 9999 || number < 0) {
+        return false;
+    }
+    else if (number < 10) {
+        return true;
+    }
+    
     return false;
 }
