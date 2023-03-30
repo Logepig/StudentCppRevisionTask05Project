@@ -7,7 +7,7 @@
 *   Примечание
 *   Отрицательное число физически не является палиндромом.
 *   Не забудьте про "защиту от дурака": диапазон корректных значений должен быть от 0 до 9999
-* 
+*
 *	Формат входных данных [input]
 *	Функция принимает любое число в диапазоне типа int.
 *
@@ -31,12 +31,22 @@
 */
 
 bool task02(int number) {
-    if (number > 9999 || number < 0) {
-        return false;
-    }
-    else if (number < 10) {
-        return true;
-    }
-    
-    return false;
+	if (number <= 9999 && number >= 0) {
+
+		int revnum = 0, pod, num = number;
+		while (number > 0) {
+			pod = number % 10;
+			revnum = revnum * 10 + pod;
+			number = number / 10;
+		}
+		if (revnum == num) {
+			return true;
+		}
+		else {
+			return false;
+		}
+
+	}
+	return false;
 }
+
